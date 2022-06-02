@@ -1,0 +1,67 @@
+<!docType html>
+<head>
+<title>slideShow button</title>
+<style>
+body{
+}
+div.gen-con{
+width: auto;
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+perspective: 5000px;
+}
+div.gen-con button{
+padding: 0 30px;
+margin: 10px;
+position: relative;
+z-index: -1;
+transition: 0.2s;
+box-shadow: 0 0 10px #000;
+}
+div.gen-con button:hover{
+font-size: 110%;
+box-shadow: 0 0 50px var(--i);
+transition: 0.2s all;
+color: var(--i);
+}
+div.gen-con button::before{
+content: "";
+position: absolute;
+top: -10px; left: 10px;
+width: 20%;
+height: 20%;
+border: 0.2px solid black;
+z-index: 1;
+background: inherit;
+transition: 0.2s;
+}
+div.gen-con button:hover::before{
+top: -10px; left: 140px;
+transition: 0.2s left;
+}
+div.gen-con button:hover::after{
+buttom: -10px; right: 140px;
+transition: 0.2s right;
+}
+div.gen-con button::after{
+content: "";
+position: absolute;
+bottom: -10px; right: 10px;
+width: 20%;
+height: 20%;
+border: 0.2px solid var(--i);
+z-index: 1;
+background: var(--i);
+transition: 0.2s;
+}
+</style>
+</head>
+<body>
+<div class="gen-con">
+<button class="in" style="--i:red"><h1>click me</h1></button>
+<button class="in" style="--i:green"><h1>click me</h1></button>
+<button class="in" style="--i:blue"><h1>click me</h1></button>
+</div>
+</body>
